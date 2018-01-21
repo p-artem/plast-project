@@ -1,0 +1,150 @@
+@import "_reset"
+
+.btn-wrap
+	text-align: center
+
+
+// button
+// 	&.btn
+// 		padding: 13px 20px 10px
+
+.btn
+	position: relative
+	z-index: 3
+	appearance: none
+	padding: 21px 10px 15px 0
+	display: inline-block
+	vertical-align: middle
+	font-family: "GothamProRegular", sans-serif
+	font-size: 18px
+	line-height: 1em
+	background-color: transparent
+	color: #fff
+	height: 60px
+	white-space: nowrap
+	transition: .3s
+	text-align: center
+	border: 1px solid transparent
+	//border-bottom-color: $text
+	cursor: pointer
+	text-decoration: none !important
+	user-select: none
+	&::after
+		content: ""
+		display: block
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 40%
+		height: 1px
+		background-color: #fff
+		transition: .3s
+
+	&:hover
+		&::after
+			width: 100%
+
+	&:active
+		&::after
+			width: calc(100% - 10px)
+
+
+
+// .btn-accent
+// 	@extend .btn
+// 	background-color: $main
+// 	border-color: $main
+// 	color: #fff
+// 	&:hover
+// 		background-color: transparent
+// 		//border-color: $dark
+// 		//color: $dark
+// 		border-color: $title
+// 		color: $title
+
+
+
+
+
+.btn-top
+	display: inline-block
+	width: 50px
+	height: 50px
+	position: absolute
+	left: 50%
+	top: 50%
+	transform: translate(-50%,-50%)
+	background-image:  url("../img/_style/_svg/btn-top.svg")
+	background-size: 28px 24px
+	background-repeat: no-repeat
+	background-position: center
+	cursor: pointer
+
+
+
+
+
+
+/* Button Drop Down Menu */
+.toggle-btn
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	text-align: center
+	text-decoration: none
+	width: 40px
+	height: 30px
+	z-index: 10
+	cursor: pointer
+	//background-color: pink
+	transition: .7s ease all
+	span
+		position: relative
+		top: 50%
+		margin-top: -1px
+		display: block
+		width: 100%
+		height: 1px
+		background-color: $main
+		transition: 0.3s
+		backface-visibility: hidden
+		&::after,
+		&::before
+			content: ""
+			position: absolute
+			right: 0
+			top: -6px
+			width: 100%
+			height: 1px
+			background-color: $main
+			//transition: 0.3s
+			transition: .7s ease all
+			backface-visibility: hidden
+		&:after
+			top: 6px
+
+	&:not(.on)
+		&:hover
+			span
+				&::before
+					width: 60%
+
+
+
+	&.on
+		transform: rotate(90deg) translate(-10px,0)
+		width: 40px
+		height: 40px
+		span
+			background-color: transparent
+			&::before
+				width: 30px
+				height: 1px
+				//transform: rotate(45deg) translate(7px, 2px)
+				transform: rotate(45deg) translate(8px, 1px)
+			&::after
+				width: 30px
+				height: 1px
+				//transform: rotate(-45deg) translate(7px, -1px)
+				transform: rotate(-45deg) translate(8px, -1px)
+/* Button Drop Down Menu END */

@@ -1,0 +1,70 @@
+@import "_colors_title"
+
+
+*
+	margin: 0
+	padding: 0
+	outline: none
+	box-sizing: border-box
+
+
+a
+	outline: none !important
+	cursor: pointer
+	color: inherit
+	//transition: .3s
+	&:hover
+		text-decoration: underline
+		//color: $main
+
+	> span
+		line-height: 1em
+		border-bottom: 1px solid transparent
+		transition: .3s
+		display: inline
+		vertical-align: middle
+		position: relative
+		//top: -2px
+
+	&:hover
+		text-decoration: none
+		> span
+			color: $main
+			border-color: $main
+
+
+
+fieldset
+	border: none
+	padding: 0
+	margin: 0
+
+ol,
+ul,
+li,
+form
+	list-style: none
+	padding: 0
+	margin: 0
+
+label
+	font-weight: normal
+
+.hidden
+	display: none
+
+
+/* Title */
+h1, h2, h3, h4, h5, h6
+	font-weight: normal
+	margin: 0
+	padding: 0
+
+
+
+
+.container-cust
+	margin: 0 auto
+	padding: 0 15px
+	width: calc(100% - 220px)
+	//max-width: 1920px

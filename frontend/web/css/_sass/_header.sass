@@ -1,0 +1,243 @@
+@import "_var"
+
+/* ================= Header ================= */
+
+.home-head
+	position: fixed
+	z-index: 100
+	top: 0
+	left: 0
+	right: 0
+	background-color: #fff
+	
+.sticky
+	.top-head-row
+		.head-l,
+		.head-r
+			height: 50px
+			padding: 5px 0
+	
+	.logo
+		max-width: 110px
+
+	.main-mnu-wrap
+		top: 50px !important
+
+
+
+
+.inner-head
+	@extend .home-head
+	border-bottom: 1px solid #e1e1e1
+
+
+
+
+
+.head-top-wrap
+
+
+.head-top
+	margin: 0 -15px
+
+.top-head-row
+	display: table
+	width: 100%
+
+	.head-l,
+	.head-r
+		display: table-cell
+		vertical-align: middle
+		height: 90px
+		padding: 10px 0
+		transition: .5s
+	.head-r
+		text-align: right
+
+
+
+.logo-wrap
+	display: block
+
+.logo
+	display: block
+	line-height: 1em
+	width: 100%
+	max-width: 190px
+	transition: .5s
+	img
+		display: block
+		width: 100%
+
+
+.main-mnu-wrap
+	display: none
+	position: fixed
+	top: 90px
+	left: 0
+	right: 0
+	bottom: 0
+	text-align: center
+	background-color: #fff
+	overflow: auto
+	padding: 0 15px 30px
+
+	&.open
+		.main-mnu-top
+			li
+				transform: translate(0,0)
+
+		.main-mnu-bottom
+			transform: translate(0,0)
+
+
+	.soc-set-wrap
+		text-align: center
+
+
+.main-mnu-top
+	li
+		transform: translate(0,-30%)
+		transition: 1.7s ease transform
+
+.main-mnu-bottom
+	transform: translate(0,-30%)
+	transition: 1.7s ease transform
+
+
+
+
+.main-mnu
+
+
+
+.main-mnu-top
+	margin-bottom: 45px
+	li
+		margin: 0 auto
+		max-width: 650px
+		font-size: 25px
+		&.active
+			font-family: "GothamProBold", sans-serif
+			a,
+			.main-mnu-itm
+				&::after
+					width: 250px
+					opacity: 1
+
+		&:first-child
+			a,
+			.main-mnu-itm
+				border-top: 1px solid #ededed
+
+	a,
+	.main-mnu-itm
+		display: flex
+		align-items: center
+		justify-content: center
+
+		position: relative
+		padding: 5px
+		width: 100%
+		text-decoration: none !important
+		border-bottom: 1px solid #ededed
+		height: 9vh
+		min-height: 60px
+		max-height: 100px
+		transition: .3s
+		&::after
+			content: ""
+			display: block
+			position: absolute
+			bottom: 0
+			left: 50%
+			transform: translate(-50%,0)
+			height: 1px
+			//width: 250px
+			background-color: $main
+			transition: .6s
+			opacity: 0
+			width: 0
+
+
+		&:hover
+			//font-family: "GothamProBold", sans-serif
+			&::after
+				width: 250px
+				opacity: 1
+
+
+.main-mnu-bottom
+
+	.lang-chang
+		margin-bottom: 30px
+
+.lang-chang
+	font-size: 16px
+	text-align: center
+	li
+		display: inline-block
+		position: relative
+		margin: 0 13px
+		&::after
+			content: ""
+			display: block
+			position: absolute
+			width: 1px
+			height: 16px
+			top: 48%
+			right: -17px
+			transform: translate(0,-50%)
+			background-color: $main
+		&:last-child
+			&::after
+				display: none
+
+		&.active
+			font-family: "GothamProBold", sans-serif
+			a
+				span
+					border-color: transparent
+	
+	a
+		display: inline-block
+
+.soc-set-wrap
+	//text-align: center
+	padding: 10px 0
+	li
+		display: inline-block
+		margin: 0 5px
+
+.soc-set
+
+.soc-btn
+	display: inline-block
+	width: 30px
+	height: 30px
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	text-decoration: none !important
+	transition: .3s
+	&:hover
+		opacity: .5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= Header ===================== */

@@ -1,0 +1,14 @@
+/* Custom styles */
+
+.field-accountform-phone_input .control-label{
+	display: block;
+}
+.field-accountform-phone_input .intl-tel-input{
+	display: block;
+	width: 100%;
+}
+.field-accountform-phone_input #accountform-phone_input{
+	display: block;
+	width: 100%;
+	height: 34px;
+}

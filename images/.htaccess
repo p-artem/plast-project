@@ -1,0 +1,41 @@
+RewriteEngine On
+
+# Mod_Autoindex
+<IfModule mod_autoindex.c>
+    # Disable Indexes
+    Options -Indexes
+</IfModule>
+
+# Cache-Control
+<FilesMatch ".(html|htm)$">
+    Header set Cache-Control "max-age=43200"
+</FilesMatch>
+<FilesMatch ".(js|css|txt|woff)$">
+    Header set Cache-Control "max-age=604800"
+</FilesMatch>
+<FilesMatch ".(flv|swf|ico|gif|jpg|jpeg|png|svg)$">
+    Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+    Header unset Cache-Control
+</FilesMatch>
+
+# Compression
+<IfModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file \.(html?|txt|css|js|php)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/x-javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+<IfModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|svg)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+</IfModule>
+<IfModule mod_headers.c>
+    Header append Vary User-Agent
+</IfModule>

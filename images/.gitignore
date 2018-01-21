@@ -1,0 +1,15 @@
+#/**/*
+
+!.gitignore
+!.htaccess
+!userProfile
+!userProfile/**/*
+!/page/**/*
+!project
+!project/**/*
+!employee/**/*
+!article/**/*
+!history/**/*
+!projectFlat/**/*
+!projectProgress/**/*
+!projectLayout/**/*
